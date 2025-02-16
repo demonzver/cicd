@@ -1,11 +1,14 @@
 # My Test dag
+import datetime
 from airflow.decorators import dag, task
 
 @dag(
     dag_id='surprise',
     description='Run it and get your gift...',
+    start_date=datetime.datetime(2025, 2, 17),
     # schedule=None,
     schedule="* * * * *",
+    catchup=False,
     tags=['surprise', 'gift'],
 )
 def surprise():
