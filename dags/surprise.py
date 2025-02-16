@@ -4,7 +4,8 @@ from airflow.decorators import dag, task
 @dag(
     dag_id='surprise',
     description='Run it and get your gift...',
-    schedule=None,
+    # schedule=None,
+    schedule="* * * * *",
     tags=['surprise', 'gift'],
 )
 def surprise():
